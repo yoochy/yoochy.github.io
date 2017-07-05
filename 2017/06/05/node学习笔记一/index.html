@@ -1,12 +1,8 @@
 
 
-  
 
 
 
-
-
-  
 
 
 <!doctype html>
@@ -20,9 +16,13 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="nodeJS——服务器http——协议request    请求    输入-请求的信息response    响应    输出-输出的东西
+http——模块文件操作：fs——File System
+fs异步 vs 同步异步——多个操作可以同时进行，前一次的操作没完事，后一次也能开始同步——一次一个
+readFile(文件名, function (err, data){})
+writeFil...">
   
-  <title>Archives: 2017 [ 杨衡轶 ]</title>
+  <title>node学习笔记一 [ 杨衡轶 ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -40,6 +40,15 @@
 
 <body>
 <div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/07/04/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Hello World
+      </div>
+    </div>
   
   
 </div>
@@ -105,174 +114,77 @@
     <div id="content-inner">
       
       
-  <article>
+  <article id="post">
+    <h1>node学习笔记一</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-06-05</span>
+      
+        <span id = "post-title-updated">Updated at 2017-07-05</span>
+      
+      
+      
+    </p>
     
+    <h1 id="nodeJS——服务器"><a href="#nodeJS——服务器" class="headerlink" title="nodeJS——服务器"></a>nodeJS——服务器</h1><h2 id="http——协议"><a href="#http——协议" class="headerlink" title="http——协议"></a>http——协议</h2><p>request    请求    输入-请求的信息<br>response    响应    输出-输出的东西</p>
+<h2 id="http——模块"><a href="#http——模块" class="headerlink" title="http——模块"></a>http——模块</h2><p>文件操作：fs——File System</p>
+<h2 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h2><p>异步 vs 同步<br>异步——多个操作可以同时进行，前一次的操作没完事，后一次也能开始<br>同步——一次一个</p>
+<pre><code>readFile(文件名, function (err, data){})
+writeFile(文件名, 内容, function (err){})
 
-  <div id="recent-posts">
-    <h1>Archives
-    
-      <span class="posts-count">
-      Total
-      5
-      
-        posts
-      
-      </span>
-    
-    </h1>
-    
-    
-      
-      
-        
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-    
-    
-      
-      
-        
-        <h3 class="archive-year-title">2017
-        
-          <span class="posts-count">
-          Total
-          5
-          
-            posts
-          
-          </span>
-        
-        </h3>
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/07/05/node学习笔记三/">
-  
-    node学习笔记一
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/07/05/node学习笔记二/">
-  
-    node学习笔记一
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/07/04/我的博客/">
-  
-    我的博客
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-4</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/07/04/hello-world/">
-  
-    Hello World
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">7-4</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/06/05/node学习笔记一/">
-  
-    node学习笔记一
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">6-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
+oBtn.onclick=function (){
+    alert(&apos;a&apos;);
+};
 
+alert(&apos;b&apos;);
+</code></pre><h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="fs-1"><a href="#fs-1" class="headerlink" title="fs"></a>fs</h2><p>数据请求——<br>前台-&gt;form、ajax、jsonp<br>后台-&gt;一样</p>
+<p>前台 &lt;-&gt; 后台<br>http</p>
+<p>请求方式：<br>1.GET        数据在url中<br>2.POST        数据不在url中</p>
+<hr>
+<pre><code>`req.url=&gt;&quot;/aaa?user=blue&amp;pass=123456&quot;
+/aaa
+user=blue&amp;pass=123456`
+</code></pre><hr>
+<h2 id="GET数据解析"><a href="#GET数据解析" class="headerlink" title="GET数据解析"></a>GET数据解析</h2><p>1.自己切<br>2.querystring        xxx=xx&amp;xxx=xxx<br>3.urlLib            aaa?xxx=xx&amp;xx=12</p>
+<p>urlLib.parse(url, true);<br>pathname<br>            query</p>
+<hr>
+<h2 id="POST数据-GET数据："><a href="#POST数据-GET数据：" class="headerlink" title="POST数据 GET数据："></a>POST数据 GET数据：</h2><p>req.url——urlLib.parse(, true)</p>
+<p>POST数据接收：POST数据比GET大得多</p>
+<p>POST很大——分段<br>data    一段数据<br>end    全部到达</p>
+<pre><code>req.url    =&gt;    &apos;/aaa?a=12&amp;b=5&apos;
+
+obj={
+    pathname: &apos;/aaa&apos;
+    query: {a: 12, b: 5}
+}
+</code></pre><hr>
+<p> <code>console.log(</code>第${i++}次收到数据<code>); 记录i++数据</code></p>
+<hr>
 
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nodeJS——服务器"><span class="toc-text">nodeJS——服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#http——协议"><span class="toc-text">http——协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http——模块"><span class="toc-text">http——模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs"><span class="toc-text">fs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http"><span class="toc-text">http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs-1"><span class="toc-text">fs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET数据解析"><span class="toc-text">GET数据解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POST数据-GET数据："><span class="toc-text">POST数据 GET数据：</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/07/04/hello-world/" class="prev">&larr; Prev post Hello World</a>
+  
+
+  
+
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -374,6 +286,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
