@@ -16,9 +16,12 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="http/fs/get/post用户注册、登录接口：/user?act=reg&amp;user=aaa&amp;pass=123456    {“ok”: false, “msg”: “原因”}
+/user?act=login&amp;user=aaa&amp;pass=123456    {“ok”: true, “msg”: “原因”}
+
+对文件访问：http://localhost:...">
   
-  <title>node学习笔记一 [ 杨衡轶 ]</title>
+  <title>node学习笔记二 [ 杨衡轶 ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -42,7 +45,7 @@
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        node学习笔记一
+        node学习笔记三
       </div>
     </div>
   
@@ -120,37 +123,112 @@
       
       
   <article id="post">
-    <h1>node学习笔记一</h1>
+    <h1>node学习笔记二</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-07-05</span>
+      <span id = "post-title-date">撰写于 2017-07-05</span>
       
-        <span id = "post-title-updated">Updated at 2017-07-05</span>
+        <span id = "post-title-updated">修改于 2017-07-05</span>
       
       
       
     </p>
     
-    
+    <h1 id="http-fs-get-post"><a href="#http-fs-get-post" class="headerlink" title="http/fs/get/post"></a>http/fs/get/post</h1><h2 id="用户注册、登录"><a href="#用户注册、登录" class="headerlink" title="用户注册、登录"></a>用户注册、登录</h2><h2 id="接口："><a href="#接口：" class="headerlink" title="接口："></a>接口：</h2><p>/user?act=reg&amp;user=aaa&amp;pass=123456<br>    {“ok”: false, “msg”: “原因”}</p>
+<p>/user?act=login&amp;user=aaa&amp;pass=123456<br>    {“ok”: true, “msg”: “原因”}</p>
+<hr>
+<h2 id="对文件访问："><a href="#对文件访问：" class="headerlink" title="对文件访问："></a>对文件访问：</h2><p><a href="http://localhost:8080/1.html" target="_blank" rel="external">http://localhost:8080/1.html</a><br><a href="http://localhost:8080/ajax.js" target="_blank" rel="external">http://localhost:8080/ajax.js</a><br><a href="http://localhost:8080/1.jpg" target="_blank" rel="external">http://localhost:8080/1.jpg</a></p>
+<h2 id="对接口访问："><a href="#对接口访问：" class="headerlink" title="对接口访问："></a>对接口访问：</h2><p><a href="http://localhost:8080/user?act=xx" target="_blank" rel="external">http://localhost:8080/user?act=xx</a>…<br><a href="http://localhost:8080/news?act=xxx" target="_blank" rel="external">http://localhost:8080/news?act=xxx</a>…</p>
+<hr>
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>1.系统模块：http、querystring、url<br>2.自定义模块<br>3.包管理器</p>
+<h2 id="系统模块："><a href="#系统模块：" class="headerlink" title="系统模块："></a>系统模块：</h2><p>www.baidu.com-&gt;<br>getServer</p>
+<p>Crypto    加密<br>Events    事件<br>Net    网络操作<br>OS    操作系统信息<br>Path    处理文件路径<br>Stream    流操作<br>Timers    定时器<br>ZLIB    压缩</p>
+<p>require</p>
+<hr>
+<p>/usr/tmp/aaa/a.txt<br>/usr/tmp/aaa/<br>a.txt<br>.txt</p>
+<hr>
+<p>1.模块组成<br>2.npm<br>3.发布自己的模块</p>
+<p>引入自己的模块——./        ?<br>对外输出东西——必须加给exports</p>
+<hr>
+<p>exports.xxx=??;<br>exports.xxx=??;<br>exports.xxx=??;</p>
+<p>module.exports={<br>    xxx:    ??,<br>    xxx:    ??,<br>    xxx:    ??<br>};</p>
+<hr>
+<p>require——引入其他模块<br>exports——输出<br>module——批量输出</p>
+<hr>
+<p>1.自己的模块<br>    require<br>    module<br>    exports</p>
+<p>2.引入模块    ./    ?<br>3.”.js”可选</p>
+<hr>
+<h2 id="npm：NodeJS-Package-Manager-NodeJS包管理器"><a href="#npm：NodeJS-Package-Manager-NodeJS包管理器" class="headerlink" title="npm：NodeJS Package Manager(NodeJS包管理器)"></a>npm：NodeJS Package Manager(NodeJS包管理器)</h2><p>1.统一下载途径<br>2.自动下载依赖</p>
+<hr>
+<p>npm install xxx<br>npm uninstall xxx</p>
+<hr>
+<p>node_modules——放模块</p>
+<hr>
+<p>./<br>不加./        必须放在node_modules里面</p>
+<hr>
+<h2 id="require"><a href="#require" class="headerlink" title="require"></a>require</h2><p>1.如果有”./“<br>    从当前目录找</p>
+<p>2.如果没有”./“<br>    先从系统模块<br>    再从node_modules找</p>
+<hr>
+<h2 id="自定义模块统一，都放到node-modules里面"><a href="#自定义模块统一，都放到node-modules里面" class="headerlink" title="自定义模块统一，都放到node_modules里面"></a>自定义模块统一，都放到node_modules里面</h2><hr>
+<p>1.模块里面<br>    require——引入<br>    exports——输出<br>    module.exports——批量输出</p>
+<p>2.npm<br>    帮咱们下载模块<br>    自动解决依赖</p>
+<p>3.node_modules<br>    模块放这里</p>
+<hr>
+<p>npm init<br>npm publish<br>npm –force unpublish</p>
+<hr>
+<h1 id="express框架"><a href="#express框架" class="headerlink" title="express框架"></a>express框架</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><h2 id="3-接收请求"><a href="#3-接收请求" class="headerlink" title="3.接收请求"></a>3.接收请求</h2><h2 id="4-响应"><a href="#4-响应" class="headerlink" title="4.响应"></a>4.响应</h2><hr>
+<p>非侵入式<br>req</p>
+<p>原生：<br>res.write();<br>res.end();</p>
+<p>express：<br>*res.send();<br>res.write();<br>res.end();</p>
+<hr>
+<p>express保留了原生的功能，添加了一些方法(send)，增强原有的功能</p>
+<hr>
+<p>//1.创建服务<br>var server=express();</p>
+<p>//2.监听<br>server.listen(8080);</p>
+<p>//3.处理请求<br>server.use(‘地址’, function (req, res){<br>});</p>
+<hr>
+<p>3种方法：<br>.get(‘/‘, function (req, res){});<br>.post(‘/‘, function (req, res){});<br>.use(‘/‘, function (req, res){});</p>
+<hr>
+<p>中间件</p>
+<hr>
+<p>/login?user=xxx&amp;pass=xxx<br>=&gt;{ok: true/false, msg: ‘原因’}</p>
+<hr>
+<p>express框架：<br>1.依赖中间件<br>2.接收请求<br>  get/post/use<br>  get(‘/地址’, function (req, res){});<br>3.非破坏式的<br>  req.url<br>4.static用法<br>  const static=require(‘express-static’);<br>  server.use(static(‘./www’));</p>
+<hr>
+<h2 id="Express："><a href="#Express：" class="headerlink" title="Express："></a>Express：</h2><p>1.数据：GET、POST<br>2.中间件：使用、写、链式操作</p>
+<hr>
+<p>GET-无需中间件<br>req.query</p>
+<p>POST-需要”body-parser”<br>server.use(bodyParser.urlencoded({}));</p>
+<p>server.use(function (){<br>    req.body<br>});</p>
+<hr>
+<h2 id="链式操作："><a href="#链式操作：" class="headerlink" title="链式操作："></a>链式操作：</h2><hr>
+<p>1.GET、POST<br>  req.query</p>
+<p>  server.use(bodyParser.urlencoded({limit: }));<br>  server.use(function (req, res, next){<br>    req.body<br>  });</p>
+<p>2.链式操作<br>  server.use(function (req, res, next){});<br>  server.get(‘/‘, function (req, res, next){});<br>  server.post(function (req, res, next){});</p>
+<p>  next——下一个步骤<br>  next();</p>
+<p>  server.use(‘/login’, function (){<br>    mysql.query(function (){<br>      if(有错)<br>        res.emit(‘error’);<br>      else<br>        next();<br>    });<br>  });</p>
+<p>3.中间件(body-parser)、自己写中间件<br>  next();</p>
+<p>  server.use(function (req, res, next){<br>    var str=’’;<br>    req.on(‘data’, function (data){<br>      str+=data;<br>    });<br>    req.on(‘end’, function (){<br>      req.body=querystring.parse(str);<br>      next();<br>    });<br>  });</p>
+
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
-    
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http-fs-get-post"><span class="toc-text">http/fs/get/post</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户注册、登录"><span class="toc-text">用户注册、登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口："><span class="toc-text">接口：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对文件访问："><span class="toc-text">对文件访问：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对接口访问："><span class="toc-text">对接口访问：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模块化"><span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统模块："><span class="toc-text">系统模块：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm：NodeJS-Package-Manager-NodeJS包管理器"><span class="toc-text">npm：NodeJS Package Manager(NodeJS包管理器)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#require"><span class="toc-text">require</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义模块统一，都放到node-modules里面"><span class="toc-text">自定义模块统一，都放到node_modules里面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#express框架"><span class="toc-text">express框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-配置"><span class="toc-text">2.配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-接收请求"><span class="toc-text">3.接收请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-响应"><span class="toc-text">4.响应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express："><span class="toc-text">Express：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式操作："><span class="toc-text">链式操作：</span></a></li></ol></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2017/07/05/node学习笔记三/" class="prev">&larr; Prev post node学习笔记一</a>
+    <a href="/2017/07/05/node学习笔记三/" class="prev">&larr; 上一篇 node学习笔记三</a>
   
 
   
 
   
-    <a href="/2017/07/04/我的博客/" class="next">Next post 我的博客 &rarr;</a>
+    <a href="/2017/07/04/我的博客/" class="next">下一篇 我的博客 &rarr;</a>
   
 </nav>
 

@@ -16,9 +16,14 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="express：1.数据2.中间件
+http-无状态的cookie、sessioncookie：在浏览器保存一些数据，每次请求都会带过来  *不安全、有限(4K)
+session：保存数据，保存在服务端  *安全、无限
+
+session：基于cookie实现的  *cookie中会有一个session的ID，服务器利用sessionid找到session文件、读取、写入
+  隐患：sessi...">
   
-  <title>node学习笔记一 [ 杨衡轶 ]</title>
+  <title>node学习笔记三 [ 杨衡轶 ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -37,13 +42,22 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2017/07/05/node学习笔记四/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        node学习笔记四
+      </div>
+    </div>
+  
   
     <div class="item next">
       <a href="/2017/07/05/node学习笔记二/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        node学习笔记一
+        node学习笔记二
       </div>
     </div>
   
@@ -111,35 +125,163 @@
       
       
   <article id="post">
-    <h1>node学习笔记一</h1>
+    <h1>node学习笔记三</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-07-05</span>
+      <span id = "post-title-date">撰写于 2017-07-05</span>
       
-        <span id = "post-title-updated">Updated at 2017-07-05</span>
+        <span id = "post-title-updated">修改于 2017-07-05</span>
       
       
       
     </p>
     
-    
+    <h1 id="express："><a href="#express：" class="headerlink" title="express："></a>express：</h1><h2 id="1-数据"><a href="#1-数据" class="headerlink" title="1.数据"></a>1.数据</h2><h2 id="2-中间件"><a href="#2-中间件" class="headerlink" title="2.中间件"></a>2.中间件</h2><hr>
+<h1 id="http-无状态的"><a href="#http-无状态的" class="headerlink" title="http-无状态的"></a>http-无状态的</h1><h2 id="cookie、session"><a href="#cookie、session" class="headerlink" title="cookie、session"></a>cookie、session</h2><p>cookie：在浏览器保存一些数据，每次请求都会带过来<br>  *不安全、有限(4K)</p>
+<p>session：保存数据，保存在服务端<br>  *安全、无限</p>
+<hr>
+<h2 id="session：基于cookie实现的"><a href="#session：基于cookie实现的" class="headerlink" title="session：基于cookie实现的"></a>session：基于cookie实现的</h2><p>  *cookie中会有一个session的ID，服务器利用sessionid找到session文件、读取、写入</p>
+<p>  隐患：session劫持</p>
+<hr>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>1.读取——cookie-parser<br>2.发送——</p>
+<p>session<br>cookie-session</p>
+<hr>
+<h2 id="cookie："><a href="#cookie：" class="headerlink" title="cookie："></a>cookie：</h2><p>1.cookie空间非常小——省着用<br>2.安全性非常差</p>
+<p>1.精打细算<br>2.校验cookie是否被篡改过</p>
+<p>a.发送cookie<br>res.secret=’字符串’;<br>res.cookie(名字, 值, {path: ‘/‘, maxAge: 毫秒, signed: true});</p>
+<p>b.读取cookie<br>cookie-parser</p>
+<p>server.use(cookieParser(‘秘钥’));</p>
+<p>server.use(function (){<br>    req.cookies        未签名版<br>    req.signedCookies    签名版<br>});</p>
+<p>c.删除cookie<br>res.clearCookie(名字);</p>
+<hr>
+<h2 id="cookie-parser"><a href="#cookie-parser" class="headerlink" title="cookie-parser"></a>cookie-parser</h2><h2 id="cookie-encrypter"><a href="#cookie-encrypter" class="headerlink" title="cookie-encrypter"></a>cookie-encrypter</h2><hr>
+<h2 id="session："><a href="#session：" class="headerlink" title="session："></a>session：</h2><p>cookie-session</p>
+<p>1.写入<br>2.读取</p>
+<p>session劫持</p>
+<hr>
+<h2 id="cookie-session"><a href="#cookie-session" class="headerlink" title="cookie-session"></a>cookie-session</h2><p>server.use(cookieParser());<br>server.use(cookieSession({<br>    keys: [.., .., .., ..]<br>}));</p>
+<p>server.use(‘/‘, function (){<br>    req.session<br>});</p>
+<p>delete req.session</p>
+<hr>
+<p>1.cookie-存在浏览器，4K，不安全<br>  签名、加密</p>
+<p>2.session-存在服务器<br>  不能独立存在，基于cookie</p>
+<hr>
+<p>`    server.use(cookieParser(‘签名字符串’));<br>    server.use(cookieSession({</p>
+<pre><code>}));
+
+server.use(function (req, res){
+    res.cookie(名字, 值, {signed: true});
+
+    res.cookies[&apos;user&apos;]
+    res.clearCookie(&apos;名字&apos;);
+
+    res.session[&apos;xxx&apos;]
+    delete res.session[&apos;xxx&apos;];
+});
+</code></pre><h2 id=""><a href="#" class="headerlink" title="`"></a>`</h2><h1 id="模板引擎："><a href="#模板引擎：" class="headerlink" title="模板引擎："></a>模板引擎：</h1><p>jade-破坏式、侵入式、强依赖<br>ejs-温和、非侵入式、弱依赖</p>
+<hr>
+<pre><code>html                &lt;html&gt;&lt;/html&gt;
+
+html                &lt;html&gt;
+    head                &lt;head&gt;
+        style                &lt;style&gt;&lt;/style&gt;
+                    &lt;/head&gt;
+    body                &lt;body&gt;
+        div                &lt;div&gt;&lt;/div&gt;
+        div                &lt;div&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+</code></pre><hr>
+<p>1.根据缩进，规定层级<br>2.属性放在()里面，逗号分隔<br>3.内容空个格，直接往后堆</p>
+<hr>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><script src="a.js"></script><br>script(src=”a.js”)</p>
+<hr>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p><a href="http://www.zhinengshe.com/" target="_blank" rel="external">官网</a><br>a(href=”<a href="http://www.zhinengshe.com/" target="_blank" rel="external">http://www.zhinengshe.com/</a>“) 官网</p>
+<hr>
+<pre><code>&lt;div&gt;
+    xxxxx
+    &lt;div&gt;
+        aaaaa
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<p>style=”width:200px;height:200px;background:red;”<br>1.普通属性写法<br>2.用json</p>
+<p>class=”aaa left-swrap active”<br>1.普通属性写法<br>2.用arr</p>
+<hr>
+<p>简写</p>
+<hr>
+<p>##<br>模板引擎：生成页面 ##<br>1.jade：破坏式<br>2.ejs：保留式</p>
+<hr>
+<p>##<br>jade ##<br>1.根据缩进划分层级<br>2.属性用()表示，用逗号分隔<br>  <em>style={}
+  </em>class=[]<br>3.内容<br>  div xxx<br>    span xxx<br>      a(href=”xxx”) 链接</p>
+<hr>
+<p>jade.render(‘字符串’);<br>jade.renderFile(‘模板文件名’, 参数)</p>
+<hr>
+<h2 id="jade"><a href="#jade" class="headerlink" title="jade"></a>jade</h2><p>1.识别单双标签</p>
+<p>注入式攻击</p>
+<hr>
+<h2 id="ejs——非侵入、非破坏"><a href="#ejs——非侵入、非破坏" class="headerlink" title="ejs——非侵入、非破坏"></a>ejs——非侵入、非破坏</h2><p>&lt;%= name %&gt;<br>&lt;%= json.arr[0].name %&gt;<br>&lt;%= 12+5 %&gt;<br>&lt;%= ‘asdfasdf’ %&gt;</p>
+<hr>
+<h1 id="express：-1"><a href="#express：-1" class="headerlink" title="express："></a>express：</h1><h2 id="1-主体"><a href="#1-主体" class="headerlink" title="1.主体"></a>1.主体</h2><h2 id="2-cookie、session"><a href="#2-cookie、session" class="headerlink" title="2.cookie、session"></a>2.cookie、session</h2><h2 id="3-数据"><a href="#3-数据" class="headerlink" title="3.数据"></a>3.数据</h2><h2 id="4-模板引擎"><a href="#4-模板引擎" class="headerlink" title="4.模板引擎"></a>4.模板引擎</h2><p>body-parser    解析post数据<br>multer        解析post文件</p>
+<hr>
+<p>body-parser    解析post数据    application/x-www-form-urlencoded<br>server.use(bodyParse.urlencode());<br>    req.body</p>
+<p>multer        解析post文件    multipart/form-data<br>var obj=multer({dest: ‘upload/‘});</p>
+<p>server.use(obj.any());</p>
+<p>server.use(function (req, res){<br>    req.files[0].originalname<br>    req.files[0].path<br>});</p>
+<p>把扩展名加上<br>        //‘upload/aadfaew324we34’ + ‘.txt’<br>        //‘upload/aadfaew324we34.txt’<br>var newName=file.path+pathLib.parse(file.originalname).ext;</p>
+<p>fs.rename(老名, 新名, function (err){});</p>
+<hr>
+<h2 id="express整合"><a href="#express整合" class="headerlink" title="express整合"></a>express整合</h2><p>body-parser<br>multer</p>
+<p>模板引擎</p>
+<p>express  模板引擎</p>
+<p>consolidate-适配</p>
+<hr>
+<h2 id="模板引擎：适配"><a href="#模板引擎：适配" class="headerlink" title="模板引擎：适配"></a>模板引擎：适配</h2><p>1.consolidate</p>
+<p>consolidate=require</p>
+<p>server.set(‘view engine’, ‘html’);<br>server.set(‘views’, ‘模板文件目录’);<br>server.engine(‘html’, consolidate.ejs);</p>
+<p>server.get(‘/‘, function (req, res){<br>    res.render(‘模板文件’, 数据);<br>});</p>
+<hr>
+<h2 id="route-路由："><a href="#route-路由：" class="headerlink" title="route-路由："></a>route-路由：</h2><p>把不同的目录，对应到不同的模块</p>
+<p>xxxx.com/aaa/        mod1<br>xxxx.com/news/    mod_news<br>    post            news_post<br>    list            news_list<br>    content        news_content<br>xxxx.com/user/        mod_users</p>
+<hr>
+<p>server.get();<br>server.use()<br>server.post()</p>
+<p>Router——迷你server<br>router.get();<br>router.post();<br>router.use();</p>
+<hr>
+<p>Router——拆<br>/user/….        mod_user<br>/item/….        mod_item</p>
+<p>//1.创建router<br>var router=express.Router();</p>
+<p>//2.把router添加到server<br>server.use(‘/user’, router);</p>
+<p>//3.router内部<br>router.get(‘/1.html’)<br>router.post(‘/2.html’)</p>
+<hr>
+<p>consolidate</p>
+<p>server.set(‘view engine’, ‘html’);<br>server.set(‘views’, ‘模板目录’);<br>server.engine(‘html’, consolidate.ejs);</p>
+<p>server.use(function (req, res){<br>    res.render(‘模板文件’, 数据);<br>});</p>
+<hr>
+<h2 id="Router——子服务"><a href="#Router——子服务" class="headerlink" title="Router——子服务"></a>Router——子服务</h2><p>var router1=express.Router();<br>server.use(‘/user’, router1);</p>
+<p>var r=express.Router();<br>router1.use(‘/user_mod’, r);<br>router1.use(‘/user_reg’, function (){});<br><a href="http://www.xxxx.com/user/user_mod" target="_blank" rel="external">http://www.xxxx.com/user/user_mod</a><br><a href="http://www.xxxx.com/user/user_reg" target="_blank" rel="external">http://www.xxxx.com/user/user_reg</a><br><a href="http://www.xxxx.com/user/user_login" target="_blank" rel="external">http://www.xxxx.com/user/user_login</a></p>
+<p>var router2=express.Router();<br>server.use(‘/news’, router2);<br><a href="http://www.xxxx.com/news/list" target="_blank" rel="external">http://www.xxxx.com/news/list</a><br><a href="http://www.xxxx.com/news/post" target="_blank" rel="external">http://www.xxxx.com/news/post</a><br><a href="http://www.xxxx.com/news/content" target="_blank" rel="external">http://www.xxxx.com/news/content</a></p>
+<p>var router3=express.Router();<br>server.use(‘/item’, router3);<br><a href="http://www.xxxx.com/item/buy" target="_blank" rel="external">http://www.xxxx.com/item/buy</a><br><a href="http://www.xxxx.com/item/mod" target="_blank" rel="external">http://www.xxxx.com/item/mod</a><br><a href="http://www.xxxx.com/item/del" target="_blank" rel="external">http://www.xxxx.com/item/del</a></p>
+<hr>
+
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
-    
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#express："><span class="toc-text">express：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数据"><span class="toc-text">1.数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-中间件"><span class="toc-text">2.中间件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#http-无状态的"><span class="toc-text">http-无状态的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie、session"><span class="toc-text">cookie、session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session：基于cookie实现的"><span class="toc-text">session：基于cookie实现的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie"><span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie："><span class="toc-text">cookie：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-parser"><span class="toc-text">cookie-parser</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-encrypter"><span class="toc-text">cookie-encrypter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session："><span class="toc-text">session：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-session"><span class="toc-text">cookie-session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">`</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板引擎："><span class="toc-text">模板引擎：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容"><span class="toc-text">内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jade"><span class="toc-text">jade</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ejs——非侵入、非破坏"><span class="toc-text">ejs——非侵入、非破坏</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#express：-1"><span class="toc-text">express：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-主体"><span class="toc-text">1.主体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-cookie、session"><span class="toc-text">2.cookie、session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据"><span class="toc-text">3.数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-模板引擎"><span class="toc-text">4.模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#express整合"><span class="toc-text">express整合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板引擎：适配"><span class="toc-text">模板引擎：适配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#route-路由："><span class="toc-text">route-路由：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Router——子服务"><span class="toc-text">Router——子服务</span></a></li></ol></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-
+    <a href="/2017/07/05/node学习笔记四/" class="prev">&larr; 上一篇 node学习笔记四</a>
   
 
   
-    <a href="/2017/07/05/node学习笔记二/" class="next">Next post node学习笔记一 &rarr;</a>
+
+  
+    <a href="/2017/07/05/node学习笔记二/" class="next">下一篇 node学习笔记二 &rarr;</a>
   
 </nav>
 
