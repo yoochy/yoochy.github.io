@@ -1,0 +1,149 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+body,html {
+  background:#f8f8f8;
+  font-size:16px;
+  font-family:Microsoft Yahei,Hiragino Sans GB,Helvetica Neue,Helvetica,tahoma,arial,Verdana,sans-serif
+}
+ul li {
+  list-style-type:circle
+}
+
+ {
+  font-family:Avenir,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  position:relative
+}
+ .resume-box {
+  width:900px;
+  height:auto;
+  margin:30px auto 10px;
+  box-shadow:0 0 40px #bdbdbd;
+  position:relative;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex
+}
+ .resume-box .content {
+  -webkit-box-flex:1;
+  -ms-flex:1;
+  flex:1;
+  padding:20px
+}
+.resume-box .content .name_box {
+  padding:20px 0
+}
+ .resume-box .content .name_box p:first-child {
+  font-size:38px;
+  line-height:55px
+}
+ .resume-box .content .name_box p:last-child {
+  color:rgba(0,0,0,.8);
+  font-size:18px
+}
+
+.footer {
+  text-align:center;
+  font-size:14px;
+  line-height:40px
+}
+.title {
+  font-size:22px;
+  padding-bottom:10px;
+  border-bottom:1px solid #b4d3c4
+}
+.header {
+  width:300px;
+  background:linear-gradient(#b4d3c4,rgba(180,211,196,.5));
+  padding:10px;
+  color:#fff
+}
+.header .avatar {
+  width:180px;
+  height:215px;
+  margin:20px auto
+}
+.header .avatar img {
+  width:100%;
+  display:block
+}
+.header p {
+  margin-top:30px;
+  font-size:16px;
+  line-height:40px;
+  color:#f8f8f8
+}
+.header .message_box {
+  padding:0 10px
+}
+.header .message_box ul li {
+  padding:5px 0 0;
+  font-size:17px;
+  color:#333;
+  list-style:none
+}
+.header .message_box ul li .icon {
+  margin-right:10px
+}
+.header .message_box ul li a {
+  color:#333
+}
+.header .message_box ul li a:hover {
+  color:#000
+}
+.header .message_box ul li span {
+  font-size:14px
+}
+.skill>ul {
+  margin:10px 0 20px
+}
+.skill>ul .end,.skill>ul .front,.skill>ul .group {
+  list-style:none
+}
+.skill>ul .end ul,.skill>ul .front ul,.skill>ul .group ul {
+  padding-left:40px
+}
+.skill>ul .end ul li,.skill>ul .front ul li,.skill>ul .group ul li {
+  margin:.5rem 0
+}
+.skill>ul .end p,.skill>ul .front p,.skill>ul .group p {
+  font-size:18px;
+  line-height:40px
+}
+.desc {
+  margin-top:20px
+}
+.desc .content-wrap {
+  margin:20px 0 30px 5px
+}
+.desc p {
+  line-height:22px;
+  margin-top:10px
+}
+.project ol {
+  margin-left:20px
+}
+.project ol li {
+  font-size:18px;
+  margin:20px 0 10px
+}
+.project ol li p {
+  font-size:18px;
+  line-height:40px
+}
+.project ol li p span {
+  font-size:15px;
+  vertical-align:middle
+}
+.project ol li ul {
+  padding-left:20px
+}
+.project ol li ul li {
+  font-size:16px;
+  margin:.5rem 0;
+  line-height:24px
+}
