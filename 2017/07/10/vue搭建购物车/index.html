@@ -16,18 +16,12 @@
   
   
   
-    <meta name="description" content="数据 - 数据库关系型数据库：MySQL、Oracle、SQLServer、Access、db2、fox pro
-MySQL：免费、中小网站优点：性能非常不错缺点：集群、容灾稍微弱一些
-Oracle：挺贵、大型应用、金融级优点：性能非常不错、集群、容灾非常强缺点：挺贵
-文件型：sqlite、mongodb
-空间型：
-
-Server端：数据存在
-Client端：管理工具、Node
-
-Serve...">
+    <meta name="description" content="创建package.jsonnpm initcnpm install vue -save安装在默认库cnpm install vue – savecnpm install vue-resource –save-dev安装在开发环境
+构建vue实例    var vm = new Vue({
+         el:&quot;#app&quot;,//绑定在class :app范围里面
+  ...">
   
-  <title>node学习笔记四 [ 杨衡轶 ]</title>
+  <title>vue搭建购物车 [ 杨衡轶 ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -47,21 +41,21 @@ Serve...">
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2017/07/10/vue搭建购物车/">
+      <a href="/2017/07/15/es6学习/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        vue搭建购物车
+        es6学习
       </div>
     </div>
   
   
     <div class="item next">
-      <a href="/2017/07/05/node学习笔记三/">
+      <a href="/2017/07/05/node学习笔记四/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        node学习笔记三
+        node学习笔记四
       </div>
     </div>
   
@@ -129,49 +123,41 @@ Serve...">
       
       
   <article id="post">
-    <h1>node学习笔记四</h1>
+    <h1>vue搭建购物车</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-07-05</span>
+      <span id = "post-title-date">Created at 2017-07-10</span>
       
-        <span id = "post-title-updated">Updated at 2017-07-05</span>
+        <span id = "post-title-updated">Updated at 2017-07-17</span>
       
       
       
     </p>
     
-    <h1 id="数据-数据库"><a href="#数据-数据库" class="headerlink" title="数据 - 数据库"></a>数据 - 数据库</h1><h2 id="关系型数据库："><a href="#关系型数据库：" class="headerlink" title="关系型数据库："></a>关系型数据库：</h2><p>MySQL、Oracle、SQLServer、Access、db2、fox pro</p>
-<h2 id="MySQL："><a href="#MySQL：" class="headerlink" title="MySQL："></a>MySQL：</h2><p>免费、中小网站<br>优点：性能非常不错<br>缺点：集群、容灾稍微弱一些</p>
-<h2 id="Oracle："><a href="#Oracle：" class="headerlink" title="Oracle："></a>Oracle：</h2><p>挺贵、大型应用、金融级<br>优点：性能非常不错、集群、容灾非常强<br>缺点：挺贵</p>
-<h2 id="文件型："><a href="#文件型：" class="headerlink" title="文件型："></a>文件型：</h2><p>sqlite、mongodb</p>
-<p>空间型：</p>
-<hr>
-<h2 id="Server端："><a href="#Server端：" class="headerlink" title="Server端："></a>Server端：</h2><p>数据存在</p>
-<h2 id="Client端："><a href="#Client端：" class="headerlink" title="Client端："></a>Client端：</h2><p>管理工具、Node</p>
-<hr>
-<h2 id="Server安装"><a href="#Server安装" class="headerlink" title="Server安装"></a>Server安装</h2><hr>
-<p>数据基本概念：<br>两种单位：<br>1.库：文件夹-用来管理，本身没法存数据<br>2.表：文件-存数据的</p>
-<p>表-Excel：<br>行-一条数据<br>列(字段、域)-一个数据项</p>
-<hr>
-<p>用户名<br>密码</p>
-<p>主键：唯一、性能高<br>    唯一标识符</p>
-<hr>
-<p>server：<br>client：<br>    Navicat-管理工具<br>    NodeJS-程序</p>
-<hr>
-<p>库-管理，存不了数据<br>表-存数据<br>字段-列<br>行-一条数据</p>
-<hr>
-<p>npm</p>
-<p>服务端：<br>客户端：<br>    node的mysql模块</p>
-<p>1.连接<br>2.查询</p>
-<p>SQL=&gt;Structured Query Language(结构化查询语句)</p>
-<p>SQL：<br>4大查询语句——增删改查</p>
-<p>增-INSERT<br>INSERT INTO 表 (字段列表) VALUES(值列表)<br>INSERT INTO <code>user_table</code> (<code>ID</code>, <code>username</code>, <code>password</code>) VALUES(0, ‘blue2’, ‘987654’);</p>
-<p>删-DELETE</p>
-<p>改-UPDATE</p>
-<p>查-SELECT<br>SELECT 什么 FROM 表<br>SELECT * FROM <code>user_table</code>;</p>
-<h2 id="SQL标准写法："><a href="#SQL标准写法：" class="headerlink" title="SQL标准写法："></a>SQL标准写法：</h2><p>1.关键字大写<br>2.库、表、字段需要加上``</p>
-<hr>
-<p>1.下载mysql模块(client)<br>2.连接<br>    var db=mysql.createConnection(host, port, user, password, database)    //?<br>3.查询<br>    db.query(SQL, (err, data)=&gt;{})<br>4.SQL语句<br>    增删改查</p>
-<hr>
+    <h1 id="创建package-json"><a href="#创建package-json" class="headerlink" title="创建package.json"></a>创建package.json</h1><p>npm init<br>cnpm install vue -save安装在默认库<br>cnpm install vue – save<br>cnpm install vue-resource –save<br>-dev安装在开发环境</p>
+<h1 id="构建vue实例"><a href="#构建vue实例" class="headerlink" title="构建vue实例"></a>构建vue实例</h1><pre><code>    var vm = new Vue({
+         el:&quot;#app&quot;,//绑定在class :app范围里面
+        data:{
+             title:&quot;hello vue&quot;
+        },//模型，所有的模型改变都会反向作用于我们的DOM
+        filters:{},//局部过滤器
+        mounted:function () {
+
+        },
+        methods:{
+
+        }//事件动作绑定
+    });
+vue.filter()//全局过滤器
+</code></pre><h1 id="v-for指令渲染产品数据，渲染商品信息"><a href="#v-for指令渲染产品数据，渲染商品信息" class="headerlink" title="v-for指令渲染产品数据，渲染商品信息"></a>v-for指令渲染产品数据，渲染商品信息</h1><h1 id="v-bind修改属性"><a href="#v-bind修改属性" class="headerlink" title="v-bind修改属性"></a>v-bind修改属性</h1><p>绑定元素，增加元素的属性<br>绑定class是数组形式<br>例如<br>    <code>v-bind:class=&quot;{&#39;md-show&#39;:delFlag}&quot;</code><br>在class中添加md-show属性为delFlag，通过js文件里面data数据控制<br>defFlag是否为真<br>v-bind 指令用于响应地更新 HTML 特性 形式如：v-bind:href    缩写为    :href;</p>
+<h1 id="v-text缩写"><a href="#v-text缩写" class="headerlink" title="v-text缩写"></a>v-text缩写</h1><p>通过双括号绑定!</p>
+<h1 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h1><p>以HTML形式渲染</p>
+<h1 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h1><p>v-if 条件渲染指令，根据其后表达式的bool值进行判断是否渲染该元素；<br>    <code>v-if=&quot;delFlag&quot;</code><br>如果delFlag为true则渲染 v-if所在行的元素，否则不渲染</p>
+<h1 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h1><p>v-if是动态的向DOM树内添加或者删除DOM元素；<br>v-show是通过设置DOM元素的display样式属性控制显隐；</p>
+<h1 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h1><p> v-else 必须跟在v-if/v-show指令之后，不然不起作用；<br>如果v-if/v-show指令的表达式为true，则else元素不显示；如果v-if/v-show指令的表达式为false，则else元素显示在页面上；</p>
+<h1 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h1><p>遍历js里面的data数据<br>例如<br>    <code>v-for=&quot;(item,index) in filterAddress&quot;</code><br>filterAddress可以是data里面数据也可以是computed实时计算后的数据</p>
+<h1 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h1><p>v-on 指令用于监听DOM事件 形式如：v-on:click  缩写为 @click<br>例如</p>
+<pre><code>v-on:click=&quot;changemoney(item,1)&quot;
+</code></pre><h1 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h1><p>v-model实时数据绑定到js，双向绑定<br>v-model=”item.productQuantity”</p>
 
   </article>
   <div class="random-toc-area">
@@ -179,20 +165,20 @@ Serve...">
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据-数据库"><span class="toc-text">数据 - 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系型数据库："><span class="toc-text">关系型数据库：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL："><span class="toc-text">MySQL：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle："><span class="toc-text">Oracle：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件型："><span class="toc-text">文件型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server端："><span class="toc-text">Server端：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client端："><span class="toc-text">Client端：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server安装"><span class="toc-text">Server安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL标准写法："><span class="toc-text">SQL标准写法：</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建package-json"><span class="toc-text">创建package.json</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建vue实例"><span class="toc-text">构建vue实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-for指令渲染产品数据，渲染商品信息"><span class="toc-text">v-for指令渲染产品数据，渲染商品信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-bind修改属性"><span class="toc-text">v-bind修改属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-text缩写"><span class="toc-text">v-text缩写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-html"><span class="toc-text">v-html</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-if"><span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-show"><span class="toc-text">v-show</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-else"><span class="toc-text">v-else</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-for"><span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-on"><span class="toc-text">v-on</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-model"><span class="toc-text">v-model</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2017/07/10/vue搭建购物车/" class="prev">&larr; Prev post vue搭建购物车</a>
+    <a href="/2017/07/15/es6学习/" class="prev">&larr; Prev post es6学习</a>
   
 
   
 
   
-    <a href="/2017/07/05/node学习笔记三/" class="next">Next post node学习笔记三 &rarr;</a>
+    <a href="/2017/07/05/node学习笔记四/" class="next">Next post node学习笔记四 &rarr;</a>
   
 </nav>
 
