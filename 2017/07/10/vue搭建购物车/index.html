@@ -17,9 +17,9 @@
   
   
     <meta name="description" content="创建package.jsonnpm initcnpm install vue -save安装在默认库cnpm install vue – savecnpm install vue-resource –save-dev安装在开发环境
-构建vue实例    var vm = new Vue({
+构建vue实例    `var vm = new Vue({
          el:&quot;#app&quot;,//绑定在class :app范围里面
-  ...">
+ ...">
   
   <title>vue搭建购物车 [ 杨衡轶 ]</title>
   
@@ -134,7 +134,7 @@
     </p>
     
     <h1 id="创建package-json"><a href="#创建package-json" class="headerlink" title="创建package.json"></a>创建package.json</h1><p>npm init<br>cnpm install vue -save安装在默认库<br>cnpm install vue – save<br>cnpm install vue-resource –save<br>-dev安装在开发环境</p>
-<h1 id="构建vue实例"><a href="#构建vue实例" class="headerlink" title="构建vue实例"></a>构建vue实例</h1><pre><code>    var vm = new Vue({
+<h1 id="构建vue实例"><a href="#构建vue实例" class="headerlink" title="构建vue实例"></a>构建vue实例</h1><pre><code>    `var vm = new Vue({
          el:&quot;#app&quot;,//绑定在class :app范围里面
         data:{
              title:&quot;hello vue&quot;
@@ -147,7 +147,7 @@
 
         }//事件动作绑定
     });
-vue.filter()//全局过滤器
+vue.filter()//全局过滤器`
 </code></pre><h1 id="v-for指令渲染产品数据，渲染商品信息"><a href="#v-for指令渲染产品数据，渲染商品信息" class="headerlink" title="v-for指令渲染产品数据，渲染商品信息"></a>v-for指令渲染产品数据，渲染商品信息</h1><h1 id="v-bind修改属性"><a href="#v-bind修改属性" class="headerlink" title="v-bind修改属性"></a>v-bind修改属性</h1><p>绑定元素，增加元素的属性<br>绑定class是数组形式<br>例如<br>    <code>v-bind:class=&quot;{&#39;md-show&#39;:delFlag}&quot;</code><br>在class中添加md-show属性为delFlag，通过js文件里面data数据控制<br>defFlag是否为真<br>v-bind 指令用于响应地更新 HTML 特性 形式如：v-bind:href    缩写为    :href;</p>
 <h1 id="v-text缩写"><a href="#v-text缩写" class="headerlink" title="v-text缩写"></a>v-text缩写</h1><p>通过双括号绑定!</p>
 <h1 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h1><p>以HTML形式渲染</p>
@@ -156,7 +156,7 @@ vue.filter()//全局过滤器
 <h1 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h1><p> v-else 必须跟在v-if/v-show指令之后，不然不起作用；<br>如果v-if/v-show指令的表达式为true，则else元素不显示；如果v-if/v-show指令的表达式为false，则else元素显示在页面上；</p>
 <h1 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h1><p>遍历js里面的data数据<br>例如<br>    <code>v-for=&quot;(item,index) in filterAddress&quot;</code><br>filterAddress可以是data里面数据也可以是computed实时计算后的数据</p>
 <h1 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h1><p>v-on 指令用于监听DOM事件 形式如：v-on:click  缩写为 @click<br>例如</p>
-<pre><code>v-on:click=&quot;changemoney(item,1)&quot;
+<pre><code>`v-on:click=&quot;changemoney(item,1)&quot;`
 </code></pre><h1 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h1><p>v-model实时数据绑定到js，双向绑定<br>v-model=”item.productQuantity”</p>
 
   </article>
