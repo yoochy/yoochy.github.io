@@ -16,12 +16,10 @@
   
   
   
-    <meta name="description" content="ES6常用的命令函数Rest参数和扩展，动态参数Promise使用 Promise的参数module.exports和ES6 import、export的使用
-vue工程到处都是export和import
- 此处要使用VUE工程
-AMD CMD CommonJs ES6AMD 异步模块定义AMD是RequireJS在推广过程中对模块定义规范化的产出是个概念define([‘package/l...">
+    <meta name="description" content="jQuery全局变量window.jQuery === window.$$.xxx调用jQuery本身的属性方法$(xxx)返还jQuery对象表达式或者DOM元素jQuery对象是原生DOM对象的封装•$(domObject)—— jQuery Object• $(xxx).get(0) —— DOM Object• $(xxx)[0] —— DOM Object
+链式语法chaining...">
   
-  <title>es6学习 [ 杨衡轶 ]</title>
+  <title>jQuery复习 [ 杨衡轶 ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -40,22 +38,13 @@ AMD CMD CommonJs ES6AMD 异步模块定义AMD是RequireJS在推广过程中对�
 <body>
 <div class="side-navigate hide-area">
   
-    <div class="item prev">
-      <a href="/2017/07/18/jQuery复习/">
-        <div class="item-icon"></div>
-      </a>
-      <div class="item-title">
-        jQuery复习
-      </div>
-    </div>
-  
   
     <div class="item next">
-      <a href="/2017/07/10/vue搭建购物车/">
+      <a href="/2017/07/15/es6学习/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        vue搭建购物车
+        es6学习
       </div>
     </div>
   
@@ -123,9 +112,9 @@ AMD CMD CommonJs ES6AMD 异步模块定义AMD是RequireJS在推广过程中对�
       
       
   <article id="post">
-    <h1>es6学习</h1>
+    <h1>jQuery复习</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-07-15</span>
+      <span id = "post-title-date">Created at 2017-07-18</span>
       
         <span id = "post-title-updated">Updated at 2017-07-18</span>
       
@@ -133,20 +122,26 @@ AMD CMD CommonJs ES6AMD 异步模块定义AMD是RequireJS在推广过程中对�
       
     </p>
     
-    <h1 id="ES6常用的命令"><a href="#ES6常用的命令" class="headerlink" title="ES6常用的命令"></a>ES6常用的命令</h1><p>函数Rest参数和扩展，动态参数<br>Promise使用 Promise的参数<br>module.exports和ES6 import、export的使用</p>
-<p>vue工程到处都是export和import</p>
-<p> 此处要使用VUE工程</p>
-<h1 id="AMD-CMD-CommonJs-ES6"><a href="#AMD-CMD-CommonJs-ES6" class="headerlink" title="AMD CMD CommonJs ES6"></a>AMD CMD CommonJs ES6</h1><h2 id="AMD-异步模块定义"><a href="#AMD-异步模块定义" class="headerlink" title="AMD 异步模块定义"></a>AMD 异步模块定义</h2><p>AMD是RequireJS在推广过程中对模块定义规范化的产出<br>是个概念<br>define([‘package/lib],function(lib){<br>    function foo(){<br>        lib.log(‘hello world’);<br>}<br>    return{<br>        foo:foo};</p>
-<p>});<br>依赖前置 需要的时候最上面定义好，再回调的时候进行引用</p>
-<h1 id="CMD同步模块定义"><a href="#CMD同步模块定义" class="headerlink" title="CMD同步模块定义"></a>CMD同步模块定义</h1><p>CMD是SeaJS在推广过程中对模块定义的规范化产出<br>define(function(require,exports,module){<br>    //通过require引入依赖<br>    var $ = require(‘jquery’);//CMD 依赖就近 即用即返回<br>    var Sprinning = require(‘./spining);}</p>
-<h1 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h1><p>CommonJS规范-module.exports输出默认输出不带名字<br>如果带名字就用exports.area带有名字的输出<br>es5里面通过require加载</p>
-<pre><code>exports.area=function(r){
-    return Math.PI*r*r;
-};
-exports.curcumference = function(r){
-    return 2*Math.PI*r;
-};
-</code></pre><h1 id="ES６"><a href="#ES６" class="headerlink" title="ＥＳ６"></a>ＥＳ６</h1><p>ＥＳ６　特性export导出、import输出<br>AMD CMD是es5里面的<br>export和import是es6里面的</p>
+    <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="全局变量window-jQuery-window"><a href="#全局变量window-jQuery-window" class="headerlink" title="全局变量window.jQuery === window.$"></a>全局变量window.jQuery === window.$</h2><p>$.xxx调用jQuery本身的属性方法<br>$(xxx)返还jQuery对象表达式或者DOM元素<br>jQuery对象是原生DOM对象的封装<br>•$(domObject)—— jQuery Object<br>• $(xxx).get(0) —— DOM Object<br>• $(xxx)[0] —— DOM Object</p>
+<h2 id="链式语法chaining"><a href="#链式语法chaining" class="headerlink" title="链式语法chaining"></a>链式语法chaining</h2><p>可以换行也可以不换行<br>$(‘#divTest’).text(‘Hello, world!’)<br>             .find(‘p.child’)//具有破坏性<br>             .css(‘color’,’end’)//具有破坏性<br>             .end()//可以用end还原具有破坏性的<br>$(document).ready(function(){…})<br>判断是否加载完毕监听 window onload<br>要DOM加载完毕才能进行操作不然会报错，使用ready方法</p>
+<h2 id="ready和onload"><a href="#ready和onload" class="headerlink" title="ready和onload"></a>ready和onload</h2><pre><code>// window.onload = function () {
+    //        console.log(&apos;onload&apos;);
+    //    }
+    $(window).load(function () {
+        console.log(&apos;load&apos;);
+    });
+    $(document).ready(function () {
+        console.log(&apos;ready&apos;);
+    });
+</code></pre><p>ready速度要比onload快很多</p>
+<h1 id="选择元素"><a href="#选择元素" class="headerlink" title="选择元素"></a>选择元素</h1><h2 id="JavaScript中选择元素"><a href="#JavaScript中选择元素" class="headerlink" title="JavaScript中选择元素"></a>JavaScript中选择元素</h2><p>• document.getElementById()<br>• document.getElementsByName()<br>• document.getElementsByTagName()<br>• document.getElementsByClassName()<br>• document.querySelector()<br>• document.querySelectorAll()</p>
+<h2 id="CSS-中选择元素"><a href="#CSS-中选择元素" class="headerlink" title="CSS 中选择元素"></a>CSS 中选择元素</h2><ul>
+<li>基本选择器</li>
+<li>属性选择器</li>
+<li>伪类选择器</li>
+<li>伪元素选择器</li>
+<li>|—|—|<br>|*       |通配符选择器，用来选择所有元素，或者某个元素下的所有元素|<br>|E       |元素选择器，是很常见的选择器，E代表文档元素，比如div，p等等<br>|.class  |类选择器|<br>|#id id  |选择器|<br>|E F     |后代选择器, 也被称作包含选择器，就是可以选择某元素的后代元素<br>|E &gt; F   |子元素选择器只能选择某元素的子元素，这里是直接子元素，不包含孙子元<br>|        |素之类的后代元素|<br>|E + F   |相邻兄弟选择器，可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素，也就是，EF两元素具有一个相同的父元素，而且Ｆ元素在Ｅ元素后面，而且相邻|<br>|E ~ F   |通用兄弟元素选择器，他选择某元素后面的所有兄弟元素，和相邻兄弟选择器很像，不过相邻兄弟选择器仅选择与其相邻的后面元素就是选中的仅一个元素；而通用兄弟元素选择器，选中的是元素相邻的后面所有兄弟元素|</li>
+</ul>
 
   </article>
   <div class="random-toc-area">
@@ -154,20 +149,18 @@ exports.curcumference = function(r){
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6常用的命令"><span class="toc-text">ES6常用的命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD-CMD-CommonJs-ES6"><span class="toc-text">AMD CMD CommonJs ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AMD-异步模块定义"><span class="toc-text">AMD 异步模块定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMD同步模块定义"><span class="toc-text">CMD同步模块定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CommonJS"><span class="toc-text">CommonJS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES６"><span class="toc-text">ＥＳ６</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局变量window-jQuery-window"><span class="toc-text">全局变量window.jQuery === window.$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式语法chaining"><span class="toc-text">链式语法chaining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ready和onload"><span class="toc-text">ready和onload</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择元素"><span class="toc-text">选择元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript中选择元素"><span class="toc-text">JavaScript中选择元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-中选择元素"><span class="toc-text">CSS 中选择元素</span></a></li></ol></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2017/07/18/jQuery复习/" class="prev">&larr; Prev post jQuery复习</a>
-  
 
   
 
   
-    <a href="/2017/07/10/vue搭建购物车/" class="next">Next post vue搭建购物车 &rarr;</a>
+    <a href="/2017/07/15/es6学习/" class="next">Next post es6学习 &rarr;</a>
   
 </nav>
 
