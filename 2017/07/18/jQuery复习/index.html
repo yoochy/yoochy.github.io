@@ -43,6 +43,15 @@ jQuery对象是原生DOM对象的封装
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2017/07/20/jQuery复习二/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        jQuery复习二
+      </div>
+    </div>
+  
   
     <div class="item next">
       <a href="/2017/07/15/es6学习/">
@@ -119,9 +128,9 @@ jQuery对象是原生DOM对象的封装
   <article id="post">
     <h1>jQuery复习</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-07-18</span>
+      <span id = "post-title-date">撰写于 2017-07-18</span>
       
-        <span id = "post-title-updated">Updated at 2017-07-19</span>
+        <span id = "post-title-updated">修改于 2017-07-19</span>
       
       
       
@@ -467,10 +476,10 @@ element.append(&apos;&lt;p&gt;p1&lt;/p&gt;&apos;, [&apos;&lt;p&gt;p2&lt;/p&gt;&a
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
+    <h2>目录</h2>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局变量window-jQuery-window"><span class="toc-text">全局变量window.jQuery === window.$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式语法chaining"><span class="toc-text">链式语法chaining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ready和onload"><span class="toc-text">ready和onload</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择元素"><span class="toc-text">选择元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript中选择元素"><span class="toc-text">JavaScript中选择元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-中选择元素"><span class="toc-text">CSS 中选择元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery中选择元素"><span class="toc-text">jQuery中选择元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#位置筛选器"><span class="toc-text">位置筛选器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子元素筛选器"><span class="toc-text">子元素筛选器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单筛选器"><span class="toc-text">- 表单筛选器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容筛选器"><span class="toc-text">- 内容筛选器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他筛选器"><span class="toc-text">- 其他筛选器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery选择器的性能优化"><span class="toc-text">- jQuery选择器的性能优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作jQuery对象"><span class="toc-text">操作jQuery对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM对象和jQuery对象"><span class="toc-text">DOM对象和jQuery对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建元素"><span class="toc-text">创建元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查和提取元素"><span class="toc-text">检查和提取元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过关系查找jQuery对象的方法-通过关系查找"><span class="toc-text">通过关系查找jQuery对象的方法 通过关系查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过关系查找jQuery对象的方法"><span class="toc-text">通过关系查找jQuery对象的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#筛选和遍历jQuery对象"><span class="toc-text">筛选和遍历jQuery对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤元素"><span class="toc-text">过滤元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取子集"><span class="toc-text">获取子集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转换元素"><span class="toc-text">转换元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历元素"><span class="toc-text">遍历元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery对象的其他操作"><span class="toc-text">jQuery对象的其他操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作元素的特性、属性和数据"><span class="toc-text">操作元素的特性、属性和数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元素的特性和属性"><span class="toc-text">元素的特性和属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特性-attributes-vs-属性-properties"><span class="toc-text">特性 attributes vs 属性 properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作元素的特性"><span class="toc-text">操作元素的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作元素的属性"><span class="toc-text">操作元素的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在元素中存取数据"><span class="toc-text">在元素中存取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery对象转换成DOM对象"><span class="toc-text">jquery对象转换成DOM对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM对象转化成jQuery对象"><span class="toc-text">DOM对象转化成jQuery对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改元素样式"><span class="toc-text">修改元素样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取或设置-style"><span class="toc-text">获取或设置 style</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取或设置元素尺寸"><span class="toc-text">获取或设置元素尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取或设置位置和滚动"><span class="toc-text">获取或设置位置和滚动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取或设置元素内容"><span class="toc-text">获取或设置元素内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动或插入元素"><span class="toc-text">- 移动或插入元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包裹元素"><span class="toc-text">包裹元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移除元素"><span class="toc-text">移除元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制和替换元素"><span class="toc-text">复制和替换元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以下方法执行的都是破坏性操作"><span class="toc-text">以下方法执行的都是破坏性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理表单元素值"><span class="toc-text">处理表单元素值</span></a></li></ol></li></ol>
   </div>
 </div>
@@ -478,11 +487,13 @@ element.append(&apos;&lt;p&gt;p1&lt;/p&gt;&apos;, [&apos;&lt;p&gt;p2&lt;/p&gt;&a
   
 <nav id="pagination">
   
-
+    <a href="/2017/07/20/jQuery复习二/" class="prev">&larr; 上一篇 jQuery复习二</a>
   
 
   
-    <a href="/2017/07/15/es6学习/" class="next">Next post es6学习 &rarr;</a>
+
+  
+    <a href="/2017/07/15/es6学习/" class="next">下一篇 es6学习 &rarr;</a>
   
 </nav>
 
