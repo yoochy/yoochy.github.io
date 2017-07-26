@@ -1,0 +1,43 @@
+.header {
+    width:300px;
+    background:linear-gradient(#b4d3c4,rgba(180,211,196,.5));
+    padding:10px;
+    color:#fff
+}
+.avatar {
+    width:230px;
+    height:260px;
+    margin:20px auto
+}
+.avatar img {
+    width:160px;
+    height:180px;
+    display:block
+}
+.header p {
+    margin-top:30px;
+    font-size:16px;
+    line-height:40px;
+    color:#f8f8f8
+}
+.header .message_box {
+    padding:0 10px
+}
+.header .message_box ul li {
+    padding:5px 0 0;
+    font-size:17px;
+    color:#333;
+    list-style:none
+}
+.header .message_box ul li .icon {
+    margin-right:10px
+}
+.header .message_box ul li a {
+    color:#333
+}
+.header .message_box ul li a:hover {
+    color:#000
+}
+.header .message_box ul li span {
+    font-size:14px
+}
